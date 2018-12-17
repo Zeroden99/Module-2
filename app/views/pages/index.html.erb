@@ -1,0 +1,18 @@
+
+<%= link_to "Add new product",  new_product_path %>
+
+<% if @products == [] %>
+    <p>Create new product</p>
+<% else %>
+    <% @products.each do |product| %>
+       <p>User
+	    <% if !product.user.userparam.nil? %>
+       	<%= image_tag product.user.userparam.avatar.url(:small) %>
+	<% end %>
+       	<b><%= product.user.email.split('@').first %></b> write: <br />
+       <b><%= product.title %></b><br />
+       <%= product.description %></p>
+       <%= product.price %></p>
+       <p><%= link_to "Read More", product_path(product.id) %></p>
+    <% end %>
+<% end %>

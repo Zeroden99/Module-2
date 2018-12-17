@@ -1,0 +1,12 @@
+Автор:
+<%= product.user.email.split('@').first %><br>
+Назва:
+<%= product.title %><br>
+Текст:
+<%= product.description %><br>
+Ціна:
+<%= product.price %><br>
+
+<br/>
+<p><%= link_to "Read More", product_path(product.id) %></p>
+<hr>

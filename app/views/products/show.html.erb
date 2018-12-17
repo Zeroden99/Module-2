@@ -1,0 +1,9 @@
+User: <%= @product.user.email.split('@').first %><br />
+Title: <%= @product.title %><br />
+Decription: <%= @product.description %><br />
+Price: <%= @product.price %><br />
+<hr>
+<% if user_signed_in? && @product.user_id == current_user.id %>
+<p><%= link_to "edit", edit_product_path(@product.id) %> |
+<%= link_to "delete", product_path(@product.id), method: :delete %><br /></p>
+<% end %>
